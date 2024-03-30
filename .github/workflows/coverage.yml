@@ -4,10 +4,9 @@
 name: coverage
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  pull_request_target:
+        branches:
+            - master
 
 jobs:
     coverage:

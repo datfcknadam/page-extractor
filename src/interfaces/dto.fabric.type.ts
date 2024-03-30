@@ -1,0 +1,1 @@
+export type DtoFabric<T> = (page?: number, offset?: number) => T;

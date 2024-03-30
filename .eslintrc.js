@@ -15,6 +15,12 @@ export default {
             ],
             "parserOptions": {
                 "sourceType": "script"
+            },
+        },
+        {
+            "files": ["tests/**/*"],
+            "env": {
+              "jest": true
             }
         }
     ],

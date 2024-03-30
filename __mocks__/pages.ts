@@ -1,0 +1,1 @@
+export default new Array(100).fill(1).map((_, ind) => ind + 1);

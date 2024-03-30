@@ -5,13 +5,14 @@ import { Options } from "./interfaces/options.interface";
 
 /**
  * pageExtractor 
- * @param fetchFn - function that will retrieve data 
- * @param dtoFabric  - callback function for generate payload to fetchFn
- * @returns { Promise }
+ * @param {FetchFn} fetchFn function that will retrieve data 
+ * @param {DtoFabric}  dtoFabric function for generate payload to fetchFn
+ * @param {import('./interfaces/options.interface').Options} options options
+ * @returns {Promise}
  */
-export const pageExtractor = async <TResponse, TDto extends DtoFabric<TDto>>(
-  fetchFn: FetchFn<TResponse, TDto>,
+export const pageExtractor = async <TResponse, TDto>(
   dtoFabric: DtoFabric<TDto>,
+  fetchFn: FetchFn<TResponse, TDto>,
   options: Partial<Options>,
 ): Promise<TResponse[]> => {
   const opt = { ...defaultOptions, ...options };

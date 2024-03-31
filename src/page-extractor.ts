@@ -18,7 +18,7 @@ export const pageExtractor = async <TResponse, TDto>(
   const opt = { ...defaultOptions, ...options };
   const dto = dtoFabric(1, 0);
   const response = await fetchFn(dto);
-  const { chunkSize, limitChunks, limitTotal, orderRequired } = opt;
+  const { pageSize: chunkSize, pageLimit: limitChunks, totalLimit: limitTotal, orderRequired } = opt;
 
   if (response.total <= chunkSize || limitChunks === 1) {
     return response.data;

@@ -1,8 +1,8 @@
 import { Options } from "../interfaces/options.interface";
 
 export default {
-  chunkSize: 100,
-  limitChunks: Infinity,
-  limitTotal: Infinity,
+  pageSize: 100,
+  pageLimit: Infinity,
+  totalLimit: Infinity,
   orderRequired: false,
 } as Options;

@@ -1,3 +1,4 @@
+
 # page-extractor
 ![image](https://github.com/datfcknadam/page-extractor/blob/gh-pages/badges/coverage-jest%20coverage.svg)
 
@@ -25,9 +26,12 @@ import pageExctractor from 'page-exctractor';
 
 Let`s getting started retrieve data from api (an example Steam API):
 ```js
-
-await pageExctractor(
+// totalData will contain data from all pages
+const totalData = await pageExctractor(
+  // dtoFabric callback	
   (offset) =>  offset,
+  // fetchFn will request data page by page until it reaches total
+  // For example, if the page size is 100 and the data is 1000, then 10 queries will be executed.
   async (offset) => {
     const response = await fetch(
       `https://steamcommunity.com/market/search/render/?query=&start=${offset}count=100&appid=753&norender=1`,
@@ -40,3 +44,20 @@ await pageExctractor(
   },
 );
 ```
+
+## Parameters
+```ts
+pageExctractor(dtoFabric, fetchFn, [, options]);
+```
+Where
+
+- **dtoFabric** is callback for generate payload to fetch
+- **fetchFn** is callback function to retrieve data. It must return an object with the number of records (total) and data.  
+- **options** is an optional options object
+## Options
+Possible option values
+
+- **pageSize** single page size, defaults **100**
+- **pageLimit** limit of pages, defaults **infinite**
+- **totalLimit** limit on the total amount of data for all pages, defaults **infinite**
+- **orderRequired** whether the data order is mandatory, defaults **false**

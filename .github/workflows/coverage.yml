@@ -17,6 +17,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Install
-                run: npm i
+                run: |
+                    npm i
             - name: Cov Badge And Publish
                 uses: nolleh/jest-badge-deploy-action@latest

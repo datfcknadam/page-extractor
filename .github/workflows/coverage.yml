@@ -16,5 +16,7 @@ jobs:
             - name: Install
               run: |
                     npm i
+            - name: Run tests
+              run: npm test
             - name: Cov Badge And Publish
               uses: nolleh/jest-badge-deploy-action@latest

@@ -12,9 +12,19 @@ Install Page-exctractor using [npm](https://www.npmjs.com/package/jest)
 
 ```npm install page-exctractor```
 
+Import module:
+```js
+const pageExctractor = require('page-exctractor');
+```
+or 
+```js
+import pageExctractor from 'page-exctractor';
+```
+
 Let`s getting started retrieve data from api (an example Steam API):
 ```js
-await exctractPage(
+
+await pageExctractor(
   (offset) =>  offset,
   async (offset) => {
     const response = await fetch(

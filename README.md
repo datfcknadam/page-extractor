@@ -1,4 +1,6 @@
 # page-extractor
+![image](https://github.com/datfcknadam/page-extractor/blob/gh-pages/badges/coverage-jest%20coverage.svg)
+
 Page-exctractor is function to retrieve data from page-like API, page by page until all data is retrieved.
 
 :innocent: **Zero depends**

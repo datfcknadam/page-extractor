@@ -1,6 +1,6 @@
 {
   "name": "page-extractor",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Npm package for extract data from page-like api",
   "bugs": {
     "url": "https://github.com/datfcknadam/page-extractor/issues"

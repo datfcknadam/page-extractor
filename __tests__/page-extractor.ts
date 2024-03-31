@@ -4,9 +4,8 @@ import api from '../__mocks__/api';
 
 test('default offset fetch', async () => {
   const pageSize = 10;
-  const data = await pageExtractor<number, number>(
-    (_, offset) => offset,
-    (offset) => {
+  const data = await pageExtractor(
+    (_, offset) => {
       const { data, total } = api(offset, pageSize);
       return {
         data,
@@ -23,8 +22,7 @@ test('default offset fetch', async () => {
 test('chunk smaller then total', async () => {
   const pageSize = 101;
   const data = await pageExtractor(
-    (_, offset) => offset,
-    (offset) => {
+    (_, offset) => {
       const { data, total } = api(offset, pageSize);
       return {
         data,
@@ -41,8 +39,7 @@ test('chunk smaller then total', async () => {
 test('order required', async () => {
   const pageSize = 10;
   const data = await pageExtractor(
-    (_, offset) => offset,
-    (offset) => {
+    (_, offset) => {
       const { data, total } = api(offset, pageSize);
       return {
         data,
@@ -60,8 +57,7 @@ test('order required', async () => {
 test('limit total', async () => {
   const pageSize = 10;
   const data = await pageExtractor(
-    (_, offset) => offset,
-    (offset) => {
+    (_, offset) => {
       const { data, total } = api(offset, pageSize);
       return {
         data,
@@ -79,8 +75,7 @@ test('limit total', async () => {
 test('page limit', async () => {
   const pageSize = 10;
   const data = await pageExtractor(
-    (_, offset) => offset,
-    (offset) => {
+    (_, offset) => {
       const { data, total } = api(offset, pageSize);
       return {
         data,

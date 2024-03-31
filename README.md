@@ -28,8 +28,6 @@ Let`s getting started retrieve data from api (an example Steam API):
 ```js
 // totalData will contain data from all pages
 const totalData = await pageExctractor(
-  // dtoFabric callback	
-  (offset) =>  offset,
   // fetchFn will request data page by page until it reaches total
   // For example, if the page size is 100 and the data is 1000, then 10 queries will be executed.
   async (offset) => {
@@ -47,11 +45,10 @@ const totalData = await pageExctractor(
 
 ## Parameters
 ```ts
-pageExctractor(dtoFabric, fetchFn, [, options]);
+pageExctractor(fetchFn, [, options]);
 ```
 Where
 
-- **dtoFabric** is callback for generate payload to fetch
 - **fetchFn** is callback function to retrieve data. It must return an object with the number of records (total) and data.  
 - **options** is an optional options object
 ## Options

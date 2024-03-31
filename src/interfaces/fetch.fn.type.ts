@@ -4,4 +4,4 @@ type Data<T> = { data: T[], total: number };
  * @param { DtoFabric }
  * @returns {{ data: number, total: number }}
  */
-export type FetchFn<T, Dto> = (dto: Dto) => Promise<Data<T>> | Data<T>;
+export type FetchFn<T> = (page: number, offset: number) => Promise<Data<T>> | Data<T>;

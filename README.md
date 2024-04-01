@@ -1,6 +1,8 @@
 
 # page-extractor
 ![image](https://github.com/datfcknadam/page-extractor/blob/gh-pages/badges/coverage-jest%20coverage.svg)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
 
 Page-exctractor is function to retrieve data from page-like API, page by page until all data is retrieved.
 
